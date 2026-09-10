@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
+<title>Polish Junior Open 2026 — Turniej squasha Junior | PZSQ</title>
+<style>
+:root{
+  --black:#0a0a0a; --white:#FFFFFF; --yellow:#00A651; --gray:#171717;
+  --muted:#a8a8a8; --line:#2c2c2c; --max:1380px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--black);color:var(--white);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}.container{max-width:var(--max);margin:auto;padding:0 32px}
+.header{position:fixed;z-index:20;top:0;left:0;right:0;background:rgba(10,10,10,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font-weight:900;letter-spacing:-1px;font-size:20px}.logo span{color:var(--yellow)}
+.links{display:flex;gap:28px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.actions{display:flex;align-items:center;gap:12px}
+.lang-switch{display:flex;border:1px solid #444;text-transform:uppercase;font-weight:800;font-size:12px;letter-spacing:.05em}
+.lang-switch button{background:transparent;color:#777;border:0;padding:10px 14px;cursor:pointer;font:inherit;letter-spacing:inherit;transition:background .15s,color .15s}
+.lang-switch button+button{border-left:1px solid #444}
+.lang-switch button.active{background:var(--yellow);color:#000}
+.lang-switch button:not(.active):hover{color:var(--white)}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--yellow);color:#000;padding:14px 22px;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.08em;border:0}
+.hero{min-height:94vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;background:
+linear-gradient(90deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.56) 45%,rgba(0,0,0,.3) 100%),
+linear-gradient(135deg,#222 0%,#101010 52%,#3a3200 100%)}
+.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 40%,rgba(245,210,31,.18),transparent 30%)}
+.hero-content{position:relative;z-index:2;padding:150px 32px 80px;max-width:var(--max);width:100%;margin:auto}
+.eyebrow{font-size:13px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow);margin-bottom:20px}
+h1{font-size:clamp(64px,10vw,150px);line-height:.83;letter-spacing:-.075em;margin:0 0 30px;font-weight:950;text-transform:uppercase}
+.hero-meta{display:flex;flex-wrap:wrap;gap:30px;font-size:18px;font-weight:800}.hero-meta div{border-left:2px solid var(--yellow);padding-left:12px}
+.hero-cta{margin-top:34px}.hero-note{margin-top:18px;color:#ccc;font-size:13px}
+.ticker{background:var(--yellow);color:#000;overflow:hidden;white-space:nowrap;border-bottom:1px solid #000}
+.ticker-track{display:flex;width:max-content;animation:scroll 22s linear infinite}
+.ticker span{font-weight:950;text-transform:uppercase;font-size:15px;letter-spacing:.08em;padding:17px 34px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.section{padding:110px 0}.dark{background:var(--black)}.light{background:var(--white);color:#0a0a0a}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:55px}
+.kicker{color:var(--yellow);font-weight:900;text-transform:uppercase;letter-spacing:.14em;font-size:12px}
+.light .kicker{color:#756400}
+h2{font-size:clamp(42px,6vw,88px);line-height:.9;letter-spacing:-.06em;margin:10px 0 0;text-transform:uppercase}
+.lead{max-width:540px;color:#aaa;font-size:17px;line-height:1.55}.light .lead{color:#555}
+.facts{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fact{padding:32px 22px;border-right:1px solid var(--line)}.fact:last-child{border:0}
+.fact b{display:block;font-size:52px;line-height:1;letter-spacing:-.05em}.fact small{display:block;margin-top:12px;color:#999;text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:.1em}
+.expect{display:grid;grid-template-columns:1.1fr .9fr;gap:70px}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card{background:var(--gray);padding:30px;min-height:190px;border:1px solid #252525}.card .num{font-size:12px;color:var(--yellow);font-weight:900}.card h3{font-size:27px;margin:35px 0 12px;letter-spacing:-.04em}.card p{color:#999;line-height:1.5;margin:0}
+.expect-list{display:flex;flex-direction:column;gap:22px;margin-top:40px}
+.expect-list li{list-style:none;border-left:2px solid var(--yellow);padding-left:16px;font-size:16px;line-height:1.55;color:#ccc}
+.expect-list li b{display:block;color:var(--white);font-weight:900;text-transform:uppercase;font-size:13px;letter-spacing:.04em;margin-bottom:4px}
+.club-card{background:var(--gray);border:1px solid #252525;padding:30px}
+.club-illustration{width:100%;height:auto;margin-bottom:26px;display:block}
+.club-card .kicker{margin-bottom:8px}
+.club-card h3{font-size:26px;letter-spacing:-.03em;margin:0 0 26px;text-transform:uppercase}
+.club-facts{display:grid;grid-template-columns:1fr 1fr;gap:20px;border-top:1px solid var(--line);padding-top:22px}
+.club-facts b{display:block;font-size:16px;font-weight:900;letter-spacing:-.02em}
+.club-facts small{display:block;margin-top:4px;color:#999;text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:.08em}
+/* ---- subpage: INFO ---- */
+.page-hero{padding:190px 0 60px;border-bottom:1px solid var(--line)}
+.breadcrumb{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#888}
+.breadcrumb a{color:var(--yellow)}
+.info-block{max-width:760px;padding:56px 0;border-bottom:1px solid var(--line)}
+.info-block:last-child{border-bottom:0}
+.info-block h2{font-size:clamp(30px,4vw,50px);margin:12px 0 20px}
+.info-block p{color:#aaa;line-height:1.6;margin:0 0 14px;max-width:640px}
+.info-list{display:flex;flex-direction:column;gap:14px;margin-top:18px}
+.info-list li{list-style:none;border-left:2px solid var(--yellow);padding-left:16px;color:#ccc;line-height:1.5}
+.photo{min-height:540px;background:linear-gradient(145deg,#333,#111 60%,#514800);position:relative;overflow:hidden}
+.photo:before{content:"SQUASH";position:absolute;right:-30px;bottom:-35px;font-size:150px;font-weight:950;letter-spacing:-.1em;color:rgba(255,255,255,.05);transform:rotate(-10deg)}
+.photo.map{background:#0f100b}
+.photo.map:before{content:none}
+.city-map-svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.photo-label{position:absolute;bottom:24px;left:24px;background:var(--yellow);color:#000;padding:10px 14px;font-weight:900;font-size:11px;text-transform:uppercase}
+.packages{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.package{background:#151515;border:1px solid #292929;padding:34px;display:flex;flex-direction:column;min-height:390px}.package.featured{border:2px solid var(--yellow)}
+.package h3{font-size:30px;margin:15px 0}.price{font-size:44px;font-weight:950;letter-spacing:-.06em;margin-bottom:24px}.package ul{padding-left:18px;color:#aaa;line-height:1.8}.package .btn{margin-top:auto}
+.faq{max-width:980px;margin:auto}.faq details{border-top:1px solid #333;padding:22px 0}.faq details:last-child{border-bottom:1px solid #333}.faq summary{cursor:pointer;font-size:21px;font-weight:800;list-style:none;display:flex;justify-content:space-between}.faq summary:after{content:"+";color:var(--yellow)}
+.deep{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.deep a{background:#151515;min-height:210px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid #282828}.deep strong{font-size:24px}.arrow{font-size:30px;color:var(--yellow)}
+.cycle{background:var(--yellow);color:#000}.cycle h2{max-width:850px}.cycle .kicker{color:#333}.cities{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:55px}.city{border-top:2px solid #000;padding:22px 0}.city b{font-size:44px;letter-spacing:-.06em}.city span{display:block;text-transform:uppercase;font-weight:900;font-size:11px;margin-top:8px}
+.tour{display:grid;grid-template-columns:1fr 2fr;gap:50px}.tour-list{border-top:1px solid #333}.tour-row{display:grid;grid-template-columns:1.4fr .8fr .7fr auto;gap:15px;padding:20px 0;border-bottom:1px solid #333;align-items:center}.tour-row b{font-size:18px}.tour-row span{color:#999;font-size:12px}
+.cta{padding:120px 0;background:linear-gradient(120deg,#161616,#090909)}.cta-inner{display:flex;justify-content:space-between;align-items:end;gap:40px}.cta h2{font-size:clamp(55px,9vw,125px);max-width:900px}.cta p{color:#aaa;max-width:450px;line-height:1.5}
+footer{padding:45px 0;border-top:1px solid #292929}.footer{display:flex;justify-content:space-between;gap:30px;align-items:center}.footer small{color:#777}.footer-links{display:flex;gap:22px;font-size:11px;text-transform:uppercase;font-weight:800}
+@media(max-width:900px){
+ .links{display:none}.facts{grid-template-columns:repeat(2,1fr)}.fact:nth-child(2n){border-right:0}.expect,.tour,.cta-inner{grid-template-columns:1fr;display:grid}.packages{grid-template-columns:1fr}.deep{grid-template-columns:repeat(2,1fr)}.cities{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+ .container,.hero-content{padding-left:20px;padding-right:20px}.nav{height:68px}.hero{min-height:88vh}.hero-content{padding-top:120px;padding-bottom:55px}h1{font-size:62px}.hero-meta{font-size:15px;gap:18px}.section{padding:75px 0}.section-head{display:block}.facts{grid-template-columns:1fr 1fr}.fact{padding:22px 14px}.fact b{font-size:39px}.cards,.deep{grid-template-columns:1fr}.photo{min-height:330px}.tour-row{grid-template-columns:1fr 1fr}.tour-row .btn{grid-column:1/-1}
+}
+</style>
+
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="#">POLISH <span>JUNIOR</span> OPEN</a>
+    <nav class="links">
+      <a href="#expect" data-i18n="nav_experience">Doświadczenie</a><a href="#packages" data-i18n="nav_packages">Pakiety</a><a href="#schedule" data-i18n="nav_schedule">Harmonogram</a><a href="#faq" data-i18n="nav_faq">FAQ</a><a href="#cycle" data-i18n="nav_cycle">Cykl PJO</a>
+    </nav>
+    <div class="actions">
+      <div class="lang-switch" role="group" aria-label="Wybór języka / Language">
+        <button type="button" data-lang="pl" class="active" aria-pressed="true">PL</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      
+</div>
+      <a class="btn" href="#register" data-i18n="btn_zapisz_sie">Zapisz się</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-content">
+    <div class="eyebrow" data-i18n="hero_eyebrow">Polish Junior Open · Edycja 2026</div>
+    <h1 data-i18n="hero_h1">Graj.<br>Poznawaj.<br>Odkrywaj.</h1>
+    <div class="hero-meta">
+      <div data-i18n="hero_meta_date">DATA TBD</div><div data-i18n="hero_meta_city">MIEJSCE TBD</div><div data-i18n="hero_meta_cat">U19 JUNIOR</div>
+    </div>
+    <div class="hero-cta"><a class="btn" href="#register" data-i18n="hero_cta">Zapisz się przez Tournament Software →</a></div>
+    <div class="hero-note" data-i18n="hero_note">Turniej squasha dla młodych zawodników — rozwój talenty, konkurencja i sportowe doświadczenie.</div>
+  </div>
+</section>
+
+<div class="ticker"><div class="ticker-track">
+  <span data-i18n="ticker_1">ZAPISY OTWARTE</span><span data-i18n="ticker_2">JUNIOR OPEN</span><span data-i18n="ticker_3">U11 · U13 · U15 · U17 · U19</span>
+  <span data-i18n="ticker_1">ZAPISY OTWARTE</span><span data-i18n="ticker_2">JUNIOR OPEN</span><span data-i18n="ticker_3">U11 · U13 · U15 · U17 · U19</span>
+</div></div>
+
+<section class="section dark">
+<div class="container">
+  <div class="section-head"><div><div class="kicker" data-i18n="facts_kicker">Kluczowe fakty</div><h2 data-i18n="facts_h2">Wszystko<br>w jednym miejscu.</h2></div><p class="lead" data-i18n="facts_lead">Turniej zbudowany wokół dobrego squasha, międzynarodowej społeczności i doświadczenia odkrywania kolejnego polskiego miasta.</p></div>
+  <div class="facts">
+    <div class="fact"><b>3</b><small data-i18n="fact1_label">Dni</small></div><div class="fact"><b>8+</b><small data-i18n="fact2_label">Kategorii wiekowych</small></div><div class="fact"><b>15+</b><small data-i18n="fact3_label">Krajów docelowych</small></div><div class="fact"><b>100+</b><small data-i18n="fact4_label">Młodych zawodników</small></div><div class="fact"><b>1</b><small data-i18n="fact5_label">Nowe miasto do odkrycia</small></div>
+  </div>
+</div>
+</section>
+
+<section class="section dark" id="expect">
+<div class="container">
+  <div class="expect">
+    <div>
+      <div class="kicker" data-i18n="expect_kicker">Czego się spodziewać</div>
+      <h2 data-i18n="expect_h2">Przyjedź na squasha.<br>Zostań na całe doświadczenie.</h2>
+      <p class="lead" data-i18n="expect_lead">Intensywna konkurencja, networkowanie ze stron rówieśników i profesjonalne obiekty — PJO gromadzi młody talent do niezapomnianego doświadczenia turniejowego.</p>
+      <ul class="expect-list">
+        <li><b data-i18n="expect_li1_b">Sportowa rywalizacja</b><span data-i18n="expect_li1_t">Mecze jedna za drugą przez kilka dni — prawdziwe doświadczenie konkurencyjne przeciwko jakościowym rywalom.</span></li>
+        <li><b data-i18n="expect_li2_b">Międzynarodowe grono</b><span data-i18n="expect_li2_t">Poznaj młodych zawodników z regionu i buduj trwałe przyjaźnie w społeczności squashu.</span></li>
+        <li><b data-i18n="expect_li3_b">Świetny obiekt</b><span data-i18n="expect_li3_t">Korty wysokiej jakości z restauracją i zakwaterowaniem na miejscu, a między meczami — pokazy i degustacje.</span></li>
+        <li><b data-i18n="expect_li4_b">Odkryj Poznań</b><span data-i18n="expect_li4_t">Zamień turniej w city break — jedzenie, architektura, kultura i lokalne atrakcje.</span></li>
+      </ul>
+    </div>
+
+    <div class="club-card">
+      <svg class="club-illustration" viewBox="0 0 320 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kort do squasha — rzut z góry">
+        <rect width="320" height="480" fill="#0a0a0a"/>
+
+        <!-- RZUT Z GÓRY — STANDARDOWY KORT SINGLOWY 9,75 × 6,40 m -->
+        <!-- Obrót o 90° w prawo względem poprzedniej wersji: ściana przednia u góry. -->
+
+        <!-- OUTER COURT BOUNDARY: proporcje 6,40 × 9,75 -->
+        <rect x="40" y="45" width="240" height="366"
+              fill="none" stroke="#f5d21f" stroke-width="4.5"/>
+
+        <!-- SHORT LINE — dokładnie w połowie długości kortu w tej stylizacji -->
+        <line x1="40" y1="228" x2="280" y2="228"
+              stroke="#f5d21f" stroke-width="2.7"/>
+
+        <!-- HALF-COURT LINE — idealnie w osi szerokości kortu, od short line do tylnej ściany -->
+        <line x1="160" y1="228" x2="160" y2="411"
+              stroke="#f5d21f" stroke-width="2.7"/>
+
+        <!-- LEWY BOX SERWISOWY — 1,60 × 1,60 m; przesunięty razem z short line -->
+        <rect x="40" y="228" width="60" height="60"
+              fill="none" stroke="#f5d21f" stroke-width="2.25"/>
+
+        <!-- PRAWY BOX SERWISOWY — 1,60 × 1,60 m; przesunięty razem z short line -->
+        <rect x="220" y="228" width="60" height="60"
+              fill="none" stroke="#f5d21f" stroke-width="2.25"/>
+
+        <!-- NAZWA OBIEKTU — górna część kortu, bez kolizji z liniami -->
+        <text x="160" y="78" fill="#a8a8a8"
+              font-family="Arial, sans-serif" font-size="8.5"
+              font-weight="800" letter-spacing="0.42"
+              text-anchor="middle">FAIR PLAY SQUASH CLUB — POZNAŃ</text>
+      </svg>
+      <div class="kicker" data-i18n="club_kicker">Klub-gospodarz · 2026</div>
+      <h3>Fair Play Squash Club, Poznań</h3>
+      <div class="club-facts">
+        <div><b>Poznań–Ławica, 20 min</b><small data-i18n="club_fact1_label">Lotnisko</small></div>
+        <div><b>Poznań Główny, 10 min</b><small data-i18n="club_fact2_label">Dworzec</small></div>
+        <div><b>Stary Rynek, 12 min</b><small data-i18n="club_fact3_label">Centrum</small></div>
+        <div><b data-i18n="club_fact4_val">Hotel, restauracja, korty</b><small data-i18n="club_fact4_label">Na miejscu</small></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section light">
+<div class="container">
+  <div class="section-head"><div><div class="kicker" data-i18n="city_kicker">Miasto-gospodarz</div><h2 data-i18n="city_h2">Miasto<br>do ogłoszenia\.</h2></div><p class="lead" data-i18n="city_lead">Lokalizacja i szczegóły turnieju zostaną ogłoszone wkrótce\. Każda edycja PJO gromadzi młodych zawodników w nowym mieście\.</p></div>
+  <div class="expect">
+    <div class="photo map">
+      <svg class="city-map-svg" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa orientacyjna Poznania z lokalizacją lotniska, hotelu, klubu Fair Play i centrum">
+        <defs>
+          <radialGradient id="glow" cx="70%" cy="35%" r="60%">
+            <stop offset="0%" stop-color="#3a3200" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="#0f100b" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <rect width="600" height="700" fill="#0f100b"/>
+        <rect width="600" height="700" fill="url(#glow)"/>
+
+        <!-- rzeka Warta -->
+        <path d="M 560 -20 C 520 120, 555 260, 505 380 C 465 470, 500 600, 470 720 L 600 720 L 600 -20 Z" fill="#173238" opacity="0.75"/>
+        <path d="M 560 -20 C 520 120, 555 260, 505 380 C 465 470, 500 600, 470 720" fill="none" stroke="#2c5a63" stroke-width="2" opacity="0.5"/>
+
+        <!-- park -->
+        <ellipse cx="150" cy="140" rx="120" ry="70" fill="#1c2812" opacity="0.6"/>
+
+        <!-- pierscien ulic wokol Starego Rynku -->
+        <ellipse cx="330" cy="300" rx="150" ry="130" fill="none" stroke="#3a3a34" stroke-width="1.5" opacity="0.7"/>
+        <ellipse cx="330" cy="300" rx="95" ry="80" fill="none" stroke="#3a3a34" stroke-width="1.2" opacity="0.55"/>
+
+        <!-- ulice -->
+        <path d="M 0 480 C 150 440, 260 470, 380 410" stroke="#33332c" stroke-width="2" fill="none" opacity="0.6"/>
+        <path d="M 40 620 C 180 560, 300 560, 460 470" stroke="#33332c" stroke-width="2" fill="none" opacity="0.6"/>
+        <path d="M 330 60 L 330 170" stroke="#33332c" stroke-width="2" fill="none" opacity="0.6"/>
+        <path d="M 200 300 L 20 260" stroke="#33332c" stroke-width="1.5" fill="none" opacity="0.5"/>
+        <path d="M 420 300 L 470 250" stroke="#33332c" stroke-width="1.5" fill="none" opacity="0.5"/>
+
+        <!-- znacznik: LOTNISKO -->
+        <g>
+          <line x1="120" y1="500" x2="120" y2="560" stroke="#f5d21f" stroke-width="1.5" opacity="0.7"/>
+          <path d="M120 480 c-13 0-23 10-23 23 0 17 23 37 23 37s23-20 23-37c0-13-10-23-23-23z" fill="#f5d21f" stroke="#0a0a0a" stroke-width="2"/>
+          <circle cx="120" cy="503" r="7" fill="#0a0a0a"/>
+          <rect x="42" y="565" width="156" height="30" fill="#0a0a0a" stroke="#f5d21f" stroke-width="1"/>
+          <text x="120" y="585" fill="#f5d21f" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="900" letter-spacing=".5" text-anchor="middle" data-i18n="map_airport">LOTNISKO ŁAWICA</text>
+        </g>
+
+        <!-- znacznik: CENTRUM / STARY RYNEK -->
+        <g>
+          <line x1="330" y1="230" x2="330" y2="170" stroke="#f5d21f" stroke-width="1.5" opacity="0.7"/>
+          <path d="M330 250 c-13 0-23 10-23 23 0 17 23 37 23 37s23-20 23-37c0-13-10-23-23-23z" fill="#f5d21f" stroke="#0a0a0a" stroke-width="2"/>
+          <circle cx="330" cy="273" r="7" fill="#0a0a0a"/>
+          <rect x="222" y="128" width="216" height="42" fill="#0a0a0a" stroke="#f5d21f" stroke-width="1"/>
+          <text x="330" y="146" fill="#f5d21f" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="900" letter-spacing=".5" text-anchor="middle" data-i18n="map_center">STARY RYNEK · CENTRUM</text>
+          <text x="330" y="162" fill="#a8a8a8" font-family="Arial, Helvetica, sans-serif" font-size="10" letter-spacing=".3" text-anchor="middle" data-i18n="map_center_sub">restauracje i atrakcje</text>
+        </g>
+
+        <!-- znacznik: FAIR PLAY SQUASH CLUB -->
+        <g>
+          <line x1="400" y1="420" x2="470" y2="470" stroke="#f5d21f" stroke-width="1.5" opacity="0.7"/>
+          <path d="M400 400 c-13 0-23 10-23 23 0 17 23 37 23 37s23-20 23-37c0-13-10-23-23-23z" fill="#f5d21f" stroke="#0a0a0a" stroke-width="2"/>
+          <circle cx="400" cy="423" r="7" fill="#0a0a0a"/>
+          <rect x="392" y="472" width="208" height="42" fill="#0a0a0a" stroke="#f5d21f" stroke-width="1"/>
+          <text x="496" y="490" fill="#f5d21f" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="900" letter-spacing=".3" text-anchor="middle" data-i18n="map_club">FAIR PLAY SQUASH CLUB</text>
+          <text x="496" y="506" fill="#a8a8a8" font-family="Arial, Helvetica, sans-serif" font-size="10" letter-spacing=".3" text-anchor="middle" data-i18n="map_club_sub">korty turnieju</text>
+        </g>
+
+        <!-- znacznik: HOTEL (na terenie klubu) -->
+        <g>
+          <line x1="440" y1="440" x2="500" y2="410" stroke="#f5d21f" stroke-width="1.2" opacity="0.6" stroke-dasharray="3 3"/>
+          <path d="M440 424 c-10 0-18 8-18 18 0 13 18 29 18 29s18-16 18-29c0-10-8-18-18-18z" fill="#0f100b" stroke="#f5d21f" stroke-width="2"/>
+          <circle cx="440" cy="442" r="5" fill="#f5d21f"/>
+          <rect x="500" y="392" width="90" height="36" fill="#0a0a0a" stroke="#f5d21f" stroke-width="1"/>
+          <text x="545" y="406" fill="#f5d21f" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="900" letter-spacing=".3" text-anchor="middle">HOTEL</text>
+          <text x="545" y="420" fill="#a8a8a8" font-family="Arial, Helvetica, sans-serif" font-size="9" text-anchor="middle" data-i18n="map_hotel_sub">na terenie klubu</text>
+        </g>
+
+        <!-- roza wiatrow -->
+        <g transform="translate(548,60)" opacity="0.8">
+          <circle r="24" fill="none" stroke="#a8a8a8" stroke-width="1"/>
+          <path d="M0 -20 L6 -2 L0 -8 L-6 -2 Z" fill="#f5d21f"/>
+          <text x="0" y="-28" fill="#a8a8a8" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="900" text-anchor="middle">N</text>
+        </g>
+
+        <text x="600" y="700" fill="rgba(255,255,255,.05)" font-family="Arial, Helvetica, sans-serif" font-size="150" font-weight="950" letter-spacing="-8" transform="rotate(-10 600 700) translate(-260,-40)">POZNAŃ</text>
+      </svg>
+      <span class="photo-label" data-i18n="map_caption">Mapa orientacyjna — nie w skali</span>
+    </div>
+    <div>
+      <div class="cards" style="grid-template-columns:1fr 1fr">
+        <article class="card" style="background:#fff;border-color:#ddd;color:#111"><span class="num" data-i18n="card1_num">DOJAZD</span><h3 data-i18n="card1_h3">Lotnisko</h3><p style="color:#666" data-i18n="card1_p">20 min jazdy autem</p></article>
+        <article class="card" style="background:#fff;border-color:#ddd;color:#111"><span class="num" data-i18n="card2_num">NOCLEG</span><h3 data-i18n="card2_h3">Zakwaterowanie</h3><p style="color:#666">Hotel FairPlayce</p></article>
+        <article class="card" style="background:#fff;border-color:#ddd;color:#111"><span class="num" data-i18n="card3_num">JEDZENIE</span><h3 data-i18n="card3_h3">Restauracje</h3><p style="color:#666">Dobre Miejsce na Bożydara</p></article>
+        <article class="card" style="background:#fff;border-color:#ddd;color:#111"><span class="num" data-i18n="card4_num">ZWIEDZANIE</span><h3 data-i18n="card4_h3">Co robić</h3><p style="color:#666" data-i18n="card4_p">Stary Rynek w Poznaniu</p></article>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section dark" id="packages">
+<div class="container">
+  <div class="section-head"><div><div class="kicker" data-i18n="pkg_kicker">Pakiety startowe</div><h2 data-i18n="pkg_h2">Wybierz swój<br>pakiet.</h2></div><p class="lead" data-i18n="pkg_lead">Pakiety są przykładowe do czasu potwierdzenia finalnych danych wydarzenia. Każdy przycisk prowadzi do Tournament Software.</p></div>
+  <div class="packages">
+    <article class="package"><div class="kicker" data-i18n="pkg1_kicker">Standard</div><h3 data-i18n="pkg1_h3">Wejście Junior</h3><div class="price">€ 80</div><ul><li data-i18n="pkg_li_entry">Udział w turnieju</li><li data-i18n="pkg_li_esf">Opłata rejestracyjna</li><li data-i18n="pkg_li_tshirt">T-shirt</li></ul><a class="btn" href="#register" data-i18n="pkg_btn">Wybierz pakiet</a></article>
+    <article class="package featured"><div class="kicker" data-i18n="pkg2_kicker">Polecany</div><h3 data-i18n="pkg2_h3">Pełne doświadczenie</h3><div class="price">€ 250</div><ul><li data-i18n="pkg_li_entry">Udział w turnieju</li><li data-i18n="pkg_li_esf">Opłata rejestracyjna</li><li data-i18n="pkg_li_tshirt">T-shirt</li><li data-i18n="pkg2_li4">2 noce w hotelu</li></ul><a class="btn" href="#register" data-i18n="pkg_btn">Wybierz pakiet</a></article>
+    <article class="package"><div class="kicker" data-i18n="pkg3_kicker">Pełny</div><h3 data-i18n="pkg3_h3">Premium</h3><div class="price">€ 325</div><ul><li data-i18n="pkg_li_entry">Udział w turnieju</li><li data-i18n="pkg_li_esf">Opłata rejestracyjna</li><li data-i18n="pkg_li_tshirt">T-shirt</li><li data-i18n="pkg3_li4">3 noce w hotelu</li></ul><a class="btn" href="#register" data-i18n="pkg_btn">Wybierz pakiet</a></article>
+  </div>
+</div>
+</section>
+
+<section class="section dark" id="schedule">
+<div class="container">
+  <div class="section-head"><div><div class="kicker" data-i18n="sched_kicker">Wszystkie kategorie</div><h2 data-i18n="sched_h2">Harmonogram.</h2></div><p class="lead" data-i18n="sched_lead">Elastyczny harmonogram wydarzenia, dopasowany do różnych kategorii wiekowych i etapów rozgrywek.</p></div>
+  <div class="tour-list">
+    <div class="tour-row"><b data-i18n="day1_b">Czwartek · 15 paź</b><span data-i18n="day1_span">Rejestracja / Rozgrzewka</span><span>16:00–21:00</span><a class="btn" href="#" data-i18n="btn_details">Szczegóły</a></div>
+    <div class="tour-row"><b data-i18n="day2_b">Piątek · 16 paź</b><span data-i18n="day2_span">Pierwszy dzień</span><span>09:00–20:00</span><a class="btn" href="#" data-i18n="btn_details">Szczegóły</a></div>
+    <div class="tour-row"><b data-i18n="day3_b">Sobota · 17 paź</b><span data-i18n="day3_span">Rozgrywki do półfinałów</span><span>09:00–21:00</span><a class="btn" href="#" data-i18n="btn_details">Szczegóły</a></div>
+    <div class="tour-row"><b data-i18n="day4_b">Niedziela · 18 paź</b><span data-i18n="day4_span">Finały</span><span>09:00–15:00</span><a class="btn" href="#" data-i18n="btn_details">Szczegóły</a></div>
+    <div class="tour-row"><b data-i18n="day5_b">Niedziela · 18 paź</b><span data-i18n="day5_span">Ceremonia medalowa z hymnami narodowymi dla zwycięzców</span><span>15:15–16:15</span><a class="btn" href="#" data-i18n="btn_details">Szczegóły</a></div>
+  </div>
+</div>
+</section>
+
+<section class="section dark" id="faq">
+<div class="container faq">
+  <div class="section-head"><div><div class="kicker" data-i18n="faq_kicker">Warto wiedzieć</div><h2>FAQ.</h2></div></div>
+  <details><summary data-i18n="faq_q1">Kto może konkurować?</summary><p class="lead" data-i18n="faq_a1">PJO jest otwarta dla młodych zawodników (kategorie U11–U19) będących członkami krajowej federacji squasha.</p></details>
+  <details><summary data-i18n="faq_q2">Czy potrzebuję licencji ESF?</summary><p class="lead" data-i18n="faq_a2">Tak. Zawodnicy powinni mieć aktywną licencję ESF; aby punkty liczyły się do rankingu krajowego w Polsce, potrzebna jest dodatkowo aktywna licencja PZSQ.</p></details>
+  <details><summary data-i18n="faq_q3">Jak się zapisać?</summary><p class="lead" data-i18n="faq_a3">Zapisy odbywają się zewnętrznie, w systemie Tournament Software. Użyj dowolnego przycisku „Zapisz się” na stronie.</p></details>
+  <details><summary data-i18n="faq_q4">Gdzie się zatrzymać?</summary><p class="lead" data-i18n="faq_a4">Turniej posiada hotel w miejscu rozgrywania zawodów.</p></details>
+  <details><summary data-i18n="faq_q5">A co z transportem?</summary><p class="lead" data-i18n="faq_a5">Lotnisko znajduje się około 20 minut jazdy autem z/do klubu. Za dodatkową opłatą organizator jest w stanie zapewnić transfer lotniskowy.</p></details>
+</div>
+</section>
+
+<section class="section dark">
+<div class="container">
+  <div class="section-head"><div><div class="kicker" data-i18n="deep_kicker">Chcesz wiedzieć więcej?</div><h2 data-i18n="deep_h2">Wszystkie szczegóły<br>tutaj.</h2></div></div>
+  <div class="deep">
+    <a href="info.html"><strong data-i18n="tile1">ZASADY</strong><span class="arrow">↗</span></a>
+    <a href="#schedule"><strong data-i18n="tile2">HARMONOGRAM</strong><span class="arrow">↗</span></a>
+    <a href="#register"><strong data-i18n="tile3">ZAPISY</strong><span class="arrow">↗</span></a>
+    <a href="#cycle"><strong data-i18n="tile4">INFORMACJE PJO</strong><span class="arrow">↗</span></a>
+    <a href="#faq"><strong data-i18n="tile5">FAQ</strong><span class="arrow">↗</span></a>
+  </div>
+</div>
+</section>
+
+<section class="section cycle" id="cycle">
+<div class="container">
+  <div class="kicker" data-i18n="cycle_kicker">Koncepcja PJO</div><h2 data-i18n="cycle_h2">Squash dla młodych\.<br>Rosnąc silniej\.<br>Każdego roku\.</h2>
+  <p style="max-width:650px;font-size:18px;line-height:1.55" data-i18n="cycle_p">Polish Junior Open buduje kolejne pokolenie squashistów: konkurencja, rozwój umiejętności i trwałe przyjaźnie. Każda edycja to nowe wyzwanie dla młodych talentów.</p>
+  <div class="cities">
+    <div class="city"><b>2026</b><span>Poznań</span></div><div class="city"><b>2027</b><span>Gdańsk</span></div><div class="city"><b>2028</b><span>Wrocław</span></div><div class="city"><b>2029</b><span>Kraków</span></div>
+  </div>
+</div>
+</section>
+
+<section class="section dark">
+<div class="container">
+  <div><div class="kicker" data-i18n="tour_kicker">Inne juniorskie turnieje squasha</div><h2>Inne możliwości konkurencji</h2><p class="lead" data-i18n="tour_lead">Odkryj dodatkowe juniorskie i młodzieżowe okazje do gry w squasha na terenie Polski i regionu.</p></div>
+  <div class="tour-list">
+    <div class="tour-row"><b>[Turniej Junior 1 – szczegóły TBD]</b><span>Miasto TBD</span><span>Data TBD</span><a class="btn" href="#" data-i18n="btn_zapisz_sie">Zapisz się</a></div>
+    <div class="tour-row"><b>[Turniej Junior 2 – szczegóły TBD]</b><span>Miasto TBD</span><span>Data TBD</span><a class="btn" href="#" data-i18n="btn_zapisz_sie">Zapisz się</a></div>
+    <div class="tour-row"><b>[Mistrzostwa Juniorskie – szczegóły TBD]</b><span>Miasto TBD</span><span>Data TBD</span><a class="btn" href="#" data-i18n="btn_zapisz_sie">Zapisz się</a></div>
+  </div>
+</div>
+</section>
+
+<section class="cta" id="register">
+<div class="container cta-inner">
+  <div><div class="kicker">Polish Junior Open · 2026</div><h2 data-i18n="cta_h2">Dołącz do nas.</h2></div>
+  <div><p data-i18n="cta_p">Młodzi konkurencyjni zawodnicy squasha. Rosnący talent. Twoje następne wyzwanie czeka.</p><a class="btn" href="#" data-i18n="cta_btn">Zapisz się przez Tournament Software →</a></div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container footer">
+  <div class="logo">POLISH <span>JUNIOR</span> OPEN × PZSQ</div>
+  <div class="footer-links"><a href="#" data-i18n="footer_link1">Regulamin</a><a href="#" data-i18n="footer_link2">Prywatność</a><a href="#" data-i18n="footer_link3">Kontakt</a></div>
+  <small data-i18n="footer_copy">© 2026 Polski Związek Squasha</small>
+</div>
+</footer>
+<script>
+(function(){
+  var dict = {
+    en: {
+      nav_experience:"Experience", nav_packages:"Packages", nav_schedule:"Schedule", nav_faq:"FAQ", nav_cycle:"PJO Info",
+      btn_zapisz_sie:"Register",
+
+      hero_eyebrow:"Polish Junior Open · 2026 Edition",
+      hero_h1:"Play.<br>Compete.<br>Grow.",
+      hero_meta_date:"DATE TBD", hero_meta_city:"LOCATION TBD", hero_meta_cat:"U19 JUNIOR",
+      hero_cta:"Register via Tournament Software →",
+      hero_note:"A competitive junior squash tournament — develop your skills and face the best young players.",
+
+      ticker_1:"REGISTRATION OPEN", ticker_2:"JUNIOR OPEN", ticker_3:"U11 · U13 · U15 · U17 · U19",
+
+      facts_kicker:"By the numbers",
+      facts_h2:"Junior squash<br>on a grand stage.",
+      facts_lead:"A competitive tournament for young squash players, building skills, confidence and connections with peers from across the region.",
+      fact1_label:"Days", fact2_label:"Age categories", fact3_label:"Regional reach", fact4_label:"Young players", fact5_label:"City to discover",
+
+      expect_kicker:"Tournament experience",
+      expect_h2:"Compete.<br>Learn.<br>Connect.",
+      expect_lead:"PJO brings together junior squash players for competition, coaching and friendship. Multiple matches across age groups, with support for development and well-run facilities.",
+      expect_li1_b:"Intense competition", expect_li1_t:"Back-to-back matches across several days — real competitive experience against quality opponents.",
+      expect_li2_b:"Peer networking", expect_li2_t:"Meet junior players from across the region and build lasting friendships within the squash community.",
+      expect_li3_b:"Quality facilities", expect_li3_t:"Professional courts and coaching support — designed for junior player development and comfort.",
+      expect_li4_b:"City experience", expect_li4_t:"Combine tournament play with time to explore the host city and build memories beyond the court.",
+
+      club_kicker:"Host venue · 2026",
+      club_fact1_label:"Location", club_fact2_label:"Transport", club_fact3_label:"City",
+      club_fact4_val:"Squash courts, facilities", club_fact4_label:"On site",
+
+      city_kicker:"Host city",
+      city_h2:"City<br>to be announced.",
+      city_lead:"The tournament location and venue details will be announced soon. Each edition of PJO brings together young players in a new Polish city.",
+      map_airport:"LOCATION TBD", map_center:"CITY CENTRE", map_center_sub:"restaurants and attractions",
+      map_club:"HOST CLUB", map_club_sub:"tournament courts", map_hotel_sub:"accommodation TBD",
+      map_caption:"Venue details coming soon",
+
+      card1_num:"ACCESS", card1_h3:"Getting there", card1_p:"Details TBD",
+      card2_num:"STAY", card2_h3:"Accommodation",
+      card3_num:"FOOD", card3_h3:"Restaurants",
+      card4_num:"EXPLORE", card4_h3:"City highlights", card4_p:"To be announced",
+
+      pkg_kicker:"Registration packages",
+      pkg_h2:"Select your<br>package.",
+      pkg_lead:"Packages are provisional until final event details are confirmed. All registration goes through Tournament Software.",
+      pkg1_kicker:"Standard", pkg1_h3:"Junior Entry",
+      pkg2_kicker:"Recommended", pkg2_h3:"Full Experience", pkg2_li4:"2 nights accommodation",
+      pkg3_kicker:"Full", pkg3_h3:"Premium", pkg3_li4:"3 nights accommodation",
+      pkg_li_entry:"Tournament entry", pkg_li_esf:"Registration fee", pkg_li_tshirt:"Tournament T-shirt",
+      pkg_btn:"Select package",
+
+      sched_kicker:"Tournament timetable",
+      sched_h2:"Four days of<br>competition.",
+      sched_lead:"The schedule accommodates all age categories with multiple match rounds, qualifying heats and finals.",
+      day1_b:"Friday · TBD", day1_span:"Check-in and warm-up",
+      day2_b:"Saturday · TBD", day2_span:"Group stage matches",
+      day3_b:"Sunday · TBD", day3_span:"Knockout matches and semi-finals",
+      day4_b:"Monday · TBD", day4_span:"Finals across all age categories",
+      day5_b:"Monday · TBD", day5_span:"Medal ceremony and closing celebration",
+      btn_details:"Learn more",
+
+      faq_kicker:"Frequently asked",
+      faq_q1:"Who can compete?", faq_a1:"PJO is open to junior players (age categories U11 to U19) who are members of a national squash federation.",
+      faq_q2:"Do I need an ESRF licence?", faq_a2:"Requirements depend on the age category and your country. Check with your national federation or contact the organiser.",
+      faq_q3:"How do I register?", faq_a3:"Registration is handled through Tournament Software. Click any 'Register' button to create your account.",
+      faq_q4:"Where will we stay?", faq_a4:"Accommodation details will be announced with the final venue information.",
+      faq_q5:"What about getting there?", faq_a5:"Venue and transport information will be confirmed and communicated to all registered participants.",
+
+      deep_kicker:"Get the details",
+      deep_h2:"Everything you need<br>to compete.",
+      tile1:"RULES", tile2:"SCHEDULE", tile3:"REGISTER", tile4:"PJO INFO", tile5:"FAQ",
+
+      cycle_kicker:"PJO Concept",
+      cycle_h2:"Junior squash.<br>Growing stronger.<br>Every year.",
+      cycle_p:"Polish Junior Open builds the next generation of squash players. Each edition brings young talent together for competitive play, skill development and lasting friendships.",
+
+      tour_kicker:"Other junior squash events",
+      tour_lead:"Explore additional junior and youth squash opportunities across Poland and the region.",
+      city_legionowo:"[City TBD]", city_sosnowiec:"[City TBD]",
+      tour_special:"National junior championships (details coming)",
+
+      cta_h2:"Join us.",
+      cta_p:"Young competitive squash players. Growing talent. Your next challenge awaits.",
+      cta_btn:"Register via Tournament Software →",
+
+      footer_link1:"Rules", footer_link2:"Privacy", footer_link3:"Contact",
+      footer_copy:"© 2026 Polish Squash Federation",
+
+      /* podstrona: zasady i regulamin */
+      ph_breadcrumb:"Rules",
+      ph_h1:"RULES AND<br>REGULATIONS.",
+      ph_lead:"Everything worth knowing before you register — in one place.",
+      b1_kicker:"About the tournament", b1_h2:"Who PJO<br>is for.",
+      b1_p1:"Polish Junior Open is a competitive tournament for young squash players (U11-U19) who want to test their skills against quality opponents and build their game.",
+      b1_p2:"The tournament follows international junior squash standards. Eligibility and competition details are outlined below.",
+      b2_kicker:"Eligibility and licences", b2_h2:"What you need<br>to play.",
+      b2_li1:"Minimum age: 35 (age categories every 5 years).",
+      b2_li2:"Active ESF licence — required to take part in the international tournament.",
+      b2_li3:"Active PZSQ licence — if you want to count towards the national ranking.",
+      b3_kicker:"Registration and payment", b3_h2:"How to<br>register.",
+      b3_p:"Registration and payment take place via Tournament Software. Choose a starter package → register → pay → done.",
+      b3_btn:"See packages →",
+      b4_kicker:"Getting there", b4_h2:"Transport<br>and parking.",
+      b4_li1:"Poznań–Ławica Airport — about 20 minutes by car from the club.",
+      b4_li2:"Poznań Główny train station — about 15 minutes by car from the club.",
+      b4_li3:"On-site parking available (limited spaces).",
+      b5_kicker:"Accommodation", b5_h2:"Where to<br>stay.",
+      b5_p:"Fair Play Squash Club has its own on-site hotel. You can book it as part of the Full Experience / Premium package, or arrange your own accommodation in the city.",
+      b6_kicker:"Contact", b6_h2:"Still have<br>questions?",
+      b6_p:"If you can't find what you're looking for in the FAQ on the home page, contact the organiser:"
+    }
+  };
+
+  function applyLang(lang){
+    document.documentElement.lang = lang;
+    if (lang === 'en') {
+      document.querySelectorAll('[data-i18n]').forEach(function(el){
+        var key = el.getAttribute('data-i18n');
+        if (dict.en[key] !== undefined) el.innerHTML = dict.en[key];
+      });
+    } else {
+      document.querySelectorAll('[data-i18n]').forEach(function(el){
+        if (el.hasAttribute('data-pl-original')) {
+          el.innerHTML = el.getAttribute('data-pl-original');
+        }
+      });
+    }
+    document.querySelectorAll('.lang-switch button').forEach(function(btn){
+      var isActive = btn.getAttribute('data-lang') === lang;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+    try { localStorage.setItem('pjo_lang', lang); } catch(e){}
+  }
+
+
+  // Initialize language system
+  var savedLang = localStorage.getItem('pjo_lang') || 'pl';
+  applyLang(savedLang);
+  
+  document.querySelectorAll('.lang-switch button[data-lang]').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      var lang = this.getAttribute('data-lang');
+      applyLang(lang);
+    });
+  });
+});
+</script>
+
+</body>
+</html>
